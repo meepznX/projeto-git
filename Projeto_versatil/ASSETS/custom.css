@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+.table tr > td {
+    vertical-align: middle !important;
+    text-align: left !important;
+}
