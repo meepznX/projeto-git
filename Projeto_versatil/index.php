@@ -12,10 +12,10 @@
 
     <p class="alert alert-info alert-dismissible fade show">
         Usuário: <br>
-        <strong>versatil@versatil.com.br</strong>
+        <strong>demo@versatildf.com.br</strong>
         <br>
         Senha:<br>
-        <strong>admin2022</strong>
+        <strong>#SouVersatil2022</strong>
 
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="form-group">
-            <label for="senha">Senha</label>
+            <label for="senha">Senha:</label>
             <input type="password" name="senha" required class="form-control" minlength="8">
             <div class="invalid feedback">Sua senha deve possuir ao menos 8 dígitos</div>
         </div>

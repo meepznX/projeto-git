@@ -1,12 +1,12 @@
 <?php 
 session_start();
 
-spl_autoload_register(function($cLassName)
+spl_autoload_register(function($className)
 {
     $diretorios=["db","services"];
 
     foreach($diretorios as $pasta) {
-        $classProcurada=__DIR__ . "/" . $pasta . "/" . $cLassName . "php";
+        $classProcurada=__DIR__ . "/" . $pasta . "/" . $className . "php";
 
         if (file_exists($classProcurada)) {
 

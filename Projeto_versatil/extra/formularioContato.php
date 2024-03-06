@@ -12,7 +12,7 @@
 
         <div class="col-md-6">
             <label for="email">Email:</label>
-            <input type="text" required class="form-control" id="email" name="email">
+            <input type="email" required class="form-control" id="email" name="email">
         </div>
     </div>
 
@@ -23,11 +23,10 @@
             <?php 
             $capitalDAO=new CapitalDAO;
             foreach($capitalDao->buscarTodos() as $capital) {
-                $descricao=utf-8encode($capital['descricao']);
+                $descricao=utf8_encode($capital['descricao']);
                 echo "
-                <div class=\form-check mb-2\">
-                <input class=\"form-check-input\" type=\"radio\" name=\"capital-id\"
-                id=\"radioCapital-{$capital['id']}\"value=\"{$capital['id']}\">
+                <div class=\"form-check mb-2\">
+                <input class=\"form-check-input\" type=\"radio\" name=\"capital_id\"id=\"radioCapital-{$capital['id']}\"value=\"{$capital['id']}\">
                 <label class=\"form-check-label\" for=\"radioCapital-{$capital['id']}\">
                     {$descricao} 
                 </label>
@@ -45,14 +44,13 @@
 
                 <select name="cargo_id" class="form-control" id="cargo">
                     <?php 
-                    $cargoDao=new CargoDAO
+                    $cargoDao=new CargoDAO;
                     foreach($cargoDao->buscarTodos()as $cargo) {
                         $descricao=utf8_encode($cargo['descricao']);
-                        echo "<option value=\"{$cargo['id']}\"> {descricao} </option>";
+                        echo "<option value=\"{$cargo['id']}\"> {$descricao} </option>";
                     }
                     ?>
                 </select>
-            </div>
             </div>
                 
             <div class="mb-2">
@@ -62,7 +60,7 @@
                     $tempoExperienciaDao=new TempoDeExperienciaDAO;
                     foreach($tempoExperienciaDao->buscarTodos()as $tempo) {
                         $descricao=utf8_encode($tempo['descricao']);
-                        echo "<option value=\"{$tempo['id']}\">1descricao </option>";
+                        echo "<option value=\"{$tempo['id']}\">{$descricao} </option>";
                     }
                     ?>
                 </select>

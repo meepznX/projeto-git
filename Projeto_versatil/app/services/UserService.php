@@ -2,7 +2,7 @@
 
 class UserService
 {
-    private $conexao;
+    private $Conexao;
 
     public function __construct()
     {
@@ -30,7 +30,7 @@ class UserService
     public static function proibirNaoLogado()
     {
         if (!isset($_SESSION['user_data'])) {
-            echo '<script>window.lcation.href = "denied.html"</script';
+            echo '<script>window.location.href = "denied.html"</script>';
             exit;
         }
     }
@@ -42,10 +42,10 @@ class UserService
         $query = $this->Conexao->prepare($sql);
 
         $query->bindParam(1, $username, PDO::PARAM_STR):
-        $query->bindParam(2, $password, PDO::PARAM_SRT);
+        $query->bindParam(2, $password, PDO::PARAM_STR);
         $query->execute();
 
-        $resultado= $query->fetch(PDO::FETCH_ASSOS);
+        $resultado= $query->fetch(PDO::FETCH_ASSOC);
         if($resultado !== false) {
             $_SESSION['user_data']=$resultado['usuario'];
             return true;
@@ -55,6 +55,6 @@ class UserService
 
     public function logout()
     {
-        sessoin_destroy();
+        session_destroy();
     }
 }
